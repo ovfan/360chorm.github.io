@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎使用360极速浏览器</title>
+    <meta name="description"
+        content="360极速浏览器是国内高端用户首选的浏览器。360极速浏览器在保证安全和稳定的基础上把“极速”做到极致，启动快，打开网页快。同时它界面简洁精致，还支持通过壁纸实现整体换肤，换肤效果令人印象深刻。">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- 固定导航栏 -->
+    <div class="header">
+        <div class="headerContent">
+            <img src="images/logo.png" alt="logo">
+            <div class="nav">
+                <a href="javascript:;">论坛</a>
+                <a href="javascript:;">扩展</a>
+                <a href="javascript:;">Mac版</a>
+            </div>
+        </div>
+    </div>
+    <div class="taste-hover-tips">
+        <img src="https://p5.ssl.qhimg.com/t0121eb611748e18cb3.png" alt="">
+        <p class="sec-first">Chromium 86 内核</p>
+        <p class="sec-second">极速浏览器率先升级，性能更强，更安全，极速体验</p>
+        <a href="">抢先体验</a>
+    </div>
+    <!-- 全屏滚动代码 -->
+    <div id="fullpage">
+        <!-- fullpage 插件里面的div是用相对定位 -->
+        <div class="section section1">
+            <div class="title-box">
+                <p>
+                    畅快浏览 极致体验
+                </p>
+                <a href="http://down.360safe.com/cse/360cse_12.0.1548.0.exe"></a>
+                <p class="p2">
+                    360极速浏览器<span>|</span>版本：12.0.1548.0
+                </p>
+            </div>
+            <img src="images/ball1.png" alt="" class="ball1">
+            <img src="images/ball2.png" alt="" class="ball2">
+            <img src="images/ship.png" alt="" class="ship">
+        </div>
+        <div class="section section2">
+            <video autoplay loop muted>
+                <source src="images/video1.mp4" type="video/mp4">
+                您的浏览器版本太低，不能显示视频
+            </video>
+            <div class="word-content">
+                <p class="bigword">极速</p>
+                <p class="minword">Chromium78全新内核</p>
+                <p class="smallword">性能强劲，快如闪电。</p>
+                <a href="http://down.360safe.com/cse/360cse_12.0.1548.0.exe"></a>
+            </div>
+        </div>
+        <div class="section section3">
+            <video autoplay loop muted>
+                <source src="images/video2.mp4" type="video/mp4">
+                您的浏览器版本太低，不能显示视频
+            </video>
+            <div class="word-content">
+                <p class="bigword">极酷</p>
+                <p class="minword">暗夜炫黑模式</p>
+                <p class="smallword">定义酷，定义你。</p>
+                <a href="http://down.360safe.com/cse/360cse_12.0.1548.0.exe"></a>
+            </div>
+        </div>
+        <div class="section section4">
+            <video autoplay loop muted>
+                <source src="images/video3.mp4" type="video/mp4">
+                您的浏览器版本太低，不能显示视频
+            </video>
+            <div class="word-content">
+                <p class="bigword">极安全</p>
+                <p class="minword">DNS加密防劫持</p>
+                <p class="smallword">安全升级，肆意无忌。</p>
+                <a href="http://down.360safe.com/cse/360cse_12.0.1548.0.exe"></a>
+            </div>
+        </div>
+        <div class="section section4">
+            <video autoplay loop muted>
+                <source src="images/video4.mp4" type="video/mp4">
+                您的浏览器版本太低，不能显示视频
+            </video>
+            <div class="word-content">
+                <p class="bigword">极视界</p>
+                <p class="minword">4K高清视频播放</p>
+                <p class="smallword">还原真实之美，尽显万物本色。</p>
+                <a href="http://down.360safe.com/cse/360cse_12.0.1548.0.exe"></a>
+            </div>
+            <div class="footer">
+                Copyright © 2005-2019 360.CN All Rights Reserved 360互联网安全中心 隐私权政策 京ICP证080047号<br>
+                <img src="images/icon.png" alt="">
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000006" target="_blank">
+                    京公网安备
+                    11000002000006号</a>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fullpage.js"></script>
+    <script>
+        $(function () {
+            $('#fullpage').fullpage({
+                'navigation': true,
+                // 滚动到当前屏幕fadeIn
+                afterLoad: function () {
+                    $(this).find(".word-content").fadeIn();
+                    // console.log($(this).index());
+                    // 滑动到最后一屏 底边fixed栏隐藏
+                    if ($(this).index() == 4) {
+                        $(this).parents("body").find(".taste-hover-tips").fadeOut(500);
+                    } else {
+                        $(this).parents("body").find(".taste-hover-tips").fadeIn(500);
+                    }
+                },
+                // 离开当前屏幕 文字模块渐渐淡出
+                onLeave: function () {
+                    $(this).find(".word-content").fadeOut();
+
+                },
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>
